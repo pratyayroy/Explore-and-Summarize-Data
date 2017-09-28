@@ -138,7 +138,7 @@ Acids are major wine constituents and contribute greatly to its taste.  In fact,
 summary(ds$fixed.acidity)
 g1 = ggplot(ds, aes(x = fixed.acidity)) + 
   geom_histogram(binwidth = .5, colour = 'white') + 
-  ggtitle("Fixed Acidity") + 
+  ggtitle("Histogram for Fixed Acidity") + 
   labs(x="fixed.acidity (g/dm^3)")
 g2 = ggplot(ds, aes(x = "", y = fixed.acidity)) + geom_boxplot() + 
   ggtitle("Box Plot (Fixed Acidity)") + 
@@ -156,7 +156,7 @@ Volatile acidity refers to the steam distillable acids present in wine, primaril
 summary(ds$volatile.acidity)
 g1 = ggplot(ds, aes(x = volatile.acidity)) + 
   geom_histogram(binwidth = .15, colour = 'white') + 
-  ggtitle("Volatile Acidity") + 
+  ggtitle("Histogram for Volatile Acidity") + 
   labs(x="volatile.acidity (g/dm^3)")
 g2 = ggplot(ds, aes(x = "", y = volatile.acidity)) + geom_boxplot() + 
   ggtitle("Box Plot (Volatile Acidity)") + 
@@ -174,7 +174,7 @@ These inexpensive supplements can be used by winemakers in solidification to boo
 summary(ds$citric.acid)
 g1 = ggplot(ds, aes(x = citric.acid)) + 
   geom_histogram(binwidth = .08, colour = 'white') + 
-  ggtitle("Citric Acid") + 
+  ggtitle("Histogram for Citric Acid") + 
   labs(x="citric.acid (g/dm^3)")
 g2 = ggplot(ds, aes(x = "", y = citric.acid)) + geom_boxplot() + 
   ggtitle("Box Plot (Citric Acid)") + 
@@ -192,7 +192,7 @@ Residual Sugar, or RS for short, refers to any natural grape sugars that are lef
 summary(ds$residual.sugar)
 g1 = ggplot(ds, aes(x = residual.sugar)) + 
   geom_histogram(binwidth = .5, colour = 'white') + 
-  ggtitle("Residual Suagr") + 
+  ggtitle("Histogram for Residual Sugar") + 
   labs(x="residual.sugar (g/dm^3)")
 g2 = ggplot(ds, aes(x = "", y = residual.sugar)) + geom_boxplot() + 
   ggtitle("Box Plot (Residual Sugar)") + 
@@ -210,7 +210,7 @@ The amount of salt in wine  is increased in wines coming from vineyards which ar
 summary(ds$chlorides)
 g1 = ggplot(ds, aes(x = chlorides)) + 
   geom_histogram(binwidth = .05, colour = 'white') + 
-  ggtitle("Chlorides") + 
+  ggtitle("Histogram for Chlorides") + 
   labs(x="chlorides (g/dm^3)")
 g2 = ggplot(ds, aes(x = "", y = chlorides)) + geom_boxplot() + 
   ggtitle("Box Plot (Chlorides)") + 
@@ -228,10 +228,10 @@ In the wine industry, sulfur dioxide (SO2) is frequently added to must and juice
 summary(ds$free.sulfur.dioxide)
 g1 = ggplot(ds, aes(x = free.sulfur.dioxide)) + 
   geom_histogram(colour ='white') + 
-  ggtitle("Free Sulphur Di-Oxide") + 
+  ggtitle("Histogram for Free Sulfur Dioxide") + 
   labs(x="free.sulfur.dioxide (g/dm^3)")
 g2 = ggplot(ds, aes(x = "", y = free.sulfur.dioxide)) + geom_boxplot() + 
-  ggtitle("Box Plot (Free Sulphur Di-Oxide)") + 
+  ggtitle("Box Plot (Free Sulfur Dioxide)") + 
   labs(y="free.sulfur.dioxide (g/dm^3)")
 multiplot(g1, g2, cols = 2)
 ```
@@ -246,10 +246,10 @@ amount of free and bound forms of S02; in low concentrations, SO2 is mostly unde
 summary(ds$total.sulfur.dioxide)
 g1 = ggplot(ds, aes(x = total.sulfur.dioxide)) + 
   geom_histogram(colour = 'white') + 
-  ggtitle("Total Sulphur Di-Oxide") + 
+  ggtitle("Histogram for Total Sulfur Dioxide") + 
   labs(x="total.sulfur.dioxide (g/dm^3)")
 g2 = ggplot(ds, aes(x = "", y = total.sulfur.dioxide)) + geom_boxplot()  + 
-  ggtitle("Box Plot (Total Sulphur Di-Oxide)") + 
+  ggtitle("Box Plot (Total Sulfur Dioxide)") + 
   labs(y="total.sulfur.dioxide (g/dm^3)")
 multiplot(g1, g2, cols = 2)
 ```
@@ -264,7 +264,7 @@ The density based on the percent alcohol and sugar content.
 summary(ds$density)
 g1 = ggplot(ds, aes(x = density)) + 
   geom_histogram(colour = 'white') + 
-  ggtitle("Density") + 
+  ggtitle("Histogram for Density") + 
   labs(x="density (g/dm^3)")
 g2 = ggplot(ds, aes(x = "", y = density)) + geom_boxplot()  + 
   ggtitle("Box Plot (Density)") + 
@@ -282,7 +282,7 @@ describes how acidic or basic a wine is on a scale from 0 (very acidic) to 14 (v
 summary(ds$pH)
 g1 = ggplot(ds, aes(x = pH)) + 
   geom_histogram(binwidth = .1, colour = 'white') + 
-  ggtitle("pH") + 
+  ggtitle("Histogram for pH") + 
   labs(x="pH")
 g2 = ggplot(ds, aes(x = "", y = pH)) + geom_boxplot()  + 
   ggtitle("Box Plot (pH)") + 
@@ -300,7 +300,7 @@ A wine additive which can contribute to sulfur dioxide gas (S02) levels, which a
 summary(ds$sulphates)
 g1 = ggplot(ds, aes(x = sulphates)) + 
   geom_histogram(binwidth = .1, colour = 'white') + 
-  ggtitle("Sulphates") + 
+  ggtitle("Histogram for Sulphates") + 
   labs(x="sulphates (g/dm^3)")
 g2 = ggplot(ds, aes(x = "", y = sulphates)) + geom_boxplot()  + 
   ggtitle("Box Plot (Sulphates)") + 
@@ -318,7 +318,7 @@ The percent alcohol content of the wine
 summary(ds$alcohol)
 g1 = ggplot(ds, aes(x = alcohol)) + 
   geom_histogram(colour = 'white') + 
-  ggtitle("Alcohol") + 
+  ggtitle("Histogram for Alcohol") + 
   labs(x="alcohol (% by volume)")
 g2 = ggplot(ds, aes(x = "", y = alcohol)) + geom_boxplot()  + 
   ggtitle("Box Plot (Alcohol)") + 
@@ -334,7 +334,7 @@ The graph does not follow a pattern.
 summary(ds$quality)
 g1 = ggplot(ds, aes(x = quality)) + 
   geom_histogram(binwidth = 1, colour = 'white') + 
-  ggtitle("Quality") + 
+  ggtitle("Histogram for Quality") + 
   labs(x="quality (score between 0 and 10)")
 g2 = ggplot(ds, aes(x = "", y = quality)) + geom_boxplot()  + 
   ggtitle("Box Plot (Quality)") + 
@@ -400,7 +400,7 @@ Let us now visualize how the above pairs will look when plotted.
 ggplot(ds, aes(x = citric.acid, y = fixed.acidity)) + 
   geom_point(alpha = 0.3) + 
   stat_smooth(method = "lm", formula = y ~ x) + 
-  ggtitle("Citric Acid VS Fixed Acidity") + 
+  ggtitle("Scatter plot to show variation of Citric Acid and Fixed Acidity") + 
   labs(x="citric.acid (g/dm^3)",
        y="fixed.acidity (g/dm^3)")
 
@@ -417,7 +417,7 @@ We can say that this is a must trend as citric acid is mixed to increase total a
 ggplot(ds, aes(x = density, y = fixed.acidity)) + 
   geom_point(alpha = 0.3) + 
   stat_smooth(method = "lm", formula = y ~ x) + 
-  ggtitle("Density VS Fixed Acidity") + 
+  ggtitle("Scatter plot to show variation of Density and Fixed Acidity") + 
   labs(x="density (g/dm^3)",
        y="fixed.acidity (g/dm^3)")
 paste(
@@ -434,7 +434,7 @@ This is an interesting correlation. We know wines with high residual sugar also 
 ggplot(ds, aes(x = density, y = citric.acid)) + 
   geom_point(alpha = 0.3) + 
   stat_smooth(method = "lm", formula = y ~ x) + 
-  ggtitle("Density VS Citric Acid") + 
+  ggtitle("Scatter plot to show variation of Density and Citric Acid") + 
   labs(x="density (g/dm^3)",
        y="citric.acid (g/dm^3)")
 
@@ -452,7 +452,7 @@ This is a weak correlation, making it possible that high density wines may have 
 ggplot(ds, aes(x = density, y = residual.sugar)) + 
   geom_point(alpha = 0.2) + 
   stat_smooth(method = "lm", formula = y ~ x) + 
-  ggtitle("Density VS Residual Sugar") + 
+  ggtitle("Scatter plot to show variation of Density and Residual Sugar") + 
   labs(x="density (g/dm^3)",
        y="residual.sugar (g/dm^3)")
 
@@ -467,11 +467,11 @@ This is what we have talked about before, one of the factors of high density is 
 ### 3.5 Quality VS Alcohol
 
 ```{r echo=FALSE}
-ggplot(ds, aes(x = quality, y = alcohol)) + 
-  geom_point(alpha = 0.5) + 
+ggplot(ds, aes(x = factor(quality), y = alcohol)) + 
+  geom_boxplot() + 
   stat_smooth(method = "lm", formula = y ~ x) + 
-  ggtitle("Quality VS Alcohol") + 
-  labs(x="quality (score between 0 and 10)uality",
+  ggtitle("Collection of Box plots to show variation of Quality and Alcohol") + 
+  labs(x="quality (score between 0 and 10)",
        y="alcohol (% by volume)")
 
 paste(
@@ -488,7 +488,7 @@ This is invariably true that with high percentage of alcohol, the quality of win
 ggplot(ds, aes(x = pH, y = fixed.acidity)) + 
   geom_point(alpha = 0.2) + 
   stat_smooth(method = "lm", formula = y ~ x) + 
-  ggtitle("pH VS Fixed Acidity") + 
+  ggtitle("Scatter plot to show variation of pH and Fixed Acidity") + 
   labs(x="pH",
        y="fixed.acidity (g/dm^3)")
 
@@ -506,7 +506,7 @@ This is again true. With highest fixed acidity, we get lowest pH value and vice-
 ggplot(ds, aes(x = citric.acid, y = volatile.acidity)) + 
   geom_point(alpha = 0.2) + 
   stat_smooth(method = "lm", formula = y ~ x) + 
-  ggtitle("Citric Acid VS Volatile Acidity") + 
+  ggtitle("Scatter plot to show variation of Citric Acid and Volatile Acidity") + 
   labs(x="citric.acid (g/dm^3)",
        y="volatile.acidity (g/dm^3)")
 
@@ -524,7 +524,7 @@ To boost the wine's total acidity, either citric acid or volatile acid is added 
 ggplot(ds, aes(x = pH, y = citric.acid)) + 
   geom_point(alpha = 0.2) + 
   stat_smooth(method = "lm", formula = y ~ x) + 
-  ggtitle("pH VS Citric Acid") + 
+  ggtitle("Scatter plot to show variation of pH and Citric Acid") + 
   labs(x="pH",
        y="citric.acid (g/dm^3)")
 
@@ -542,7 +542,7 @@ This is again true. With highest citric acidity, we get lowest pH value and vice
 ggplot(ds, aes(x = alcohol, y = density)) + 
   geom_point(alpha = 0.2) + 
   stat_smooth(method = "lm", formula = y ~ x) + 
-  ggtitle("Alcohol VS Density") + 
+  ggtitle("Scatter plot to show variation of Alcohol and Density") + 
   labs(x="alcohol (% by volume)",
        y="density (g/dm^3)")
 
@@ -557,10 +557,10 @@ Alcohol is lighter than water, that is density is less than 1. Thus the graph is
 ### 3.10 Quality VS Volatile Acidity
 
 ```{r echo=FALSE}
-ggplot(ds, aes(x = quality, y = volatile.acidity)) + 
-  geom_point(alpha = 0.2) + 
+ggplot(ds, aes(x = factor(quality), y = volatile.acidity)) + 
+  geom_boxplot() + 
   stat_smooth(method = "lm", formula = y ~ x) + 
-  ggtitle("Quality VS Volatile Acidity") + 
+  ggtitle("Collection of Box plots to show variation of Quality and Volatile Acidity") + 
   labs(x="quality (score between 0 and 10)",
        y="volatile.acidity (g/dm^3)")
 
@@ -588,12 +588,12 @@ Fixed acidity vs citric acidity is the strongest relation that I found having a 
 
 ## 5. Multivariate Plots Section
 
-
+#### 5.1 Dispersion of Quality amongst Citric Acid and Fixed Acidity
 Let us see how quality is dispersed among citric acid and fixed acidity.
 
 ```{r echo=FALSE}
 g1 = ggplot(ds, aes(x = citric.acid, y = fixed.acidity)) + 
-  geom_point(aes(color = quality)) + 
+  geom_point(aes(color = factor(quality))) + 
   ggtitle("Continious Score") + 
   labs(x="citric.acid (g/dm^3)",
        y="fixed.acidity (g/dm^3)")
@@ -607,9 +607,11 @@ multiplot(g1, g2, cols = 2)
 
 We can see from this diagram that the darker shades are in the bottom section of the graph making it clear that bad quality of wine do have lower to medium contents of both the acids. That also suggests good winemakers do indulge in adding citric acids to right proportions to pull up the acidic content.
 
+#### 5.2 Dispersion of Quality amongst Density and Fixed Acidity
+
 ```{r echo=FALSE}
 g1 = ggplot(ds, aes(x = density, y = fixed.acidity)) + 
-  geom_point(aes(color = quality)) + 
+  geom_point(aes(color = factor(quality))) + 
   ggtitle("Continious Score") + 
   labs(x="density (g/dm^3)",
        y="fixed.acidity (g/dm^3)")
@@ -623,9 +625,11 @@ multiplot(g1, g2, cols = 2)
 
 We can see that the good quality wines have low density but high acidic contents.
 
+#### 5.3 Dispersion of Quality amongst Density and Residual Sugar
+
 ```{r echo=FALSE}
 g1 = ggplot(ds, aes(x = density, y = residual.sugar)) + 
-  geom_point(aes(color = quality)) + 
+  geom_point(aes(color = factor(quality))) + 
   ggtitle("Continious Score") + 
   labs(x="density (g/dm^3)",
        y="residual.sugar (g/dm^3)")
@@ -639,17 +643,20 @@ multiplot(g1, g2, cols = 2)
 
 Again we see that good wines or lighter blues have low density but high residual sugar content.
 
+#### 5.4 Dispersion of Quality amongst Alcohol and Density
+
 ```{r echo=FALSE}
-g1 = ggplot(ds, aes(x = alcohol, y = density, size = pH)) + 
-  geom_point(aes(color = quality)) + 
+g1 = ggplot(ds, aes(x = alcohol, y = density)) + 
+  geom_point(aes(color = factor(quality))) + 
   ggtitle("Continious Score") + 
   labs(x="alcohol (% by volume)",
        y="density (g/dm^3)")
-g2 = ggplot(ds, aes(x = alcohol, y = density, size = pH)) + 
+g2 = ggplot(ds, aes(x = alcohol, y = density)) + 
   geom_point(alpha = 0.5, aes(color = rating)) + 
   ggtitle("Rated Score") + 
   labs(x="alcohol (% by volume)",
        y="density (g/dm^3)")
+
 multiplot(g1, g2, cols = 2)
 ```
 
@@ -673,9 +680,9 @@ No.
 
 ### 7.1 Plot One
 ```{r echo=FALSE, Plot_One}
-ggplot(ds, aes(x = alcohol, y = density, size = pH)) + 
+ggplot(ds, aes(x = alcohol, y = density)) + 
   geom_point(alpha = 0.5, aes(color = rating)) + 
-  ggtitle("Plot One") + 
+  ggtitle("Scatter plot to show distribution of quality against alcohol and density") + 
   labs(x="alcohol (% by volume)",
        y="density (g/dm^3)")
 ```
@@ -688,7 +695,7 @@ The most promising plot supporting the argument that we have started from the ve
 ```{r echo=FALSE, Plot_Two}
 ggplot(ds, aes(x = density, y = fixed.acidity)) + 
   geom_point(aes(color = rating)) + 
-  ggtitle("Plot Two") + 
+  ggtitle("Scatter plot to show distribution of quality against fixed acidity and density") + 
   labs(x="density (g/dm^3)",
        y="fixed.acidity (g/dm^3)")
 ```
@@ -702,7 +709,7 @@ We can see that the clustering of good wines is near a place where the density i
 ggplot(ds, aes(x = citric.acid, y = volatile.acidity)) + 
   geom_point(alpha = 0.2) + 
   stat_smooth(method = "lm", formula = y ~ x) + 
-  ggtitle("Plot Three") + 
+  ggtitle("Scatter plot to show distribution of citric acid and volatile acid") + 
   labs(x="citric.acid (g/dm^3)",
        y="volatile.acidity (g/dm^3)")
 ```
@@ -715,5 +722,8 @@ The argument that winemakers uses citric acid to pull up the acidic content of t
 
 This dataset has details of 1599 wines varied by twelve features from around 2009. I first did single variable analysis on the dataset, thus understanding the basic features of the wines and building the first step towards a skeptical data exploration journey. Next I visited the interesting variables in pairs and started to note down the possible trends trying to identify he reasons which determines the quality of wines.
 
-Finally I ended up with the argument that is,
-Good wines have a high alcohol content, lesser density, medium pH and low density.
+Finally I ended up with the argument that is, ***Good wines have a high alcohol content, lesser density, medium pH and low density.*** 
+
+The hurdles I faced while developing the project was I was getting a single color whose tone varied for the different qualities of wines. Now, this was a bit challenging to interpret as the similar colors are hard to distinguish. So, I ended up factoring the discrete variable quality for the plotting purpose. The next problem was the six colors are not again totally visually appealing. So, I created a new variable - rating and based on the quality, rated the wines as Good, OK or Bad. This made things easy to interpret and look cool.
+
+This exploration can even be boosted by using functions such as **SelectKBest** to know which features contribute most to predicting the quality of wine. Then we can build one or two classifiers and make a good wine predicting model for the future.
