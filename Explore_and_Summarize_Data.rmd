@@ -592,13 +592,18 @@ Fixed acidity vs citric acidity is the strongest relation that I found having a 
 Let us see how quality is dispersed among citric acid and fixed acidity.
 
 ```{r echo=FALSE}
-g1 = ggplot(ds, aes(x = citric.acid, y = fixed.acidity)) + 
-  geom_point(aes(color = factor(quality))) + 
-  ggtitle("Continious Score") + 
-  labs(x="citric.acid (g/dm^3)",
-       y="fixed.acidity (g/dm^3)")
-g2 = ggplot(ds, aes(x = citric.acid, y = fixed.acidity)) + 
-  geom_point(aes(color = rating)) + 
+g1 = ggplot(aes(x = citric.acid, y = fixed.acidity, 
+                color = factor(quality)), data = ds) +
+      geom_point(alpha = 0.8, size = 1) +
+      geom_smooth(method = "lm", se = FALSE,size=1) +
+  ggtitle("Original Score") + 
+  labs(x="density (g/dm^3)",
+       y="fixed.acidity (g/dm^3)",
+       color = "original score")
+g2 = ggplot(aes(x = citric.acid, y = fixed.acidity, 
+                color = rating), data = ds) +
+      geom_point(alpha = 0.8, size = 1) +
+      geom_smooth(method = "lm", se = FALSE,size=1) + 
   ggtitle("Rated Score") + 
   labs(x="citric.acid (g/dm^3)",
        y="fixed.acidity (g/dm^3)")
@@ -610,13 +615,18 @@ We can see from this diagram that the darker shades are in the bottom section of
 #### 5.2 Dispersion of Quality amongst Density and Fixed Acidity
 
 ```{r echo=FALSE}
-g1 = ggplot(ds, aes(x = density, y = fixed.acidity)) + 
-  geom_point(aes(color = factor(quality))) + 
-  ggtitle("Continious Score") + 
+g1 = ggplot(aes(x = density, y = fixed.acidity, 
+                color = factor(quality)), data = ds) +
+      geom_point(alpha = 0.8, size = 1) +
+      geom_smooth(method = "lm", se = FALSE,size=1) +
+  ggtitle("Original Score") + 
   labs(x="density (g/dm^3)",
-       y="fixed.acidity (g/dm^3)")
-g2 = ggplot(ds, aes(x = density, y = fixed.acidity)) + 
-  geom_point(aes(color = rating)) + 
+       y="fixed.acidity (g/dm^3)",
+       color = "original score")
+g2 = ggplot(aes(x = density, y = fixed.acidity, 
+                color = rating), data = ds) +
+      geom_point(alpha = 0.8, size = 1) +
+      geom_smooth(method = "lm", se = FALSE,size=1) +
   ggtitle("Rated Score") + 
   labs(x="density (g/dm^3)",
        y="fixed.acidity (g/dm^3)")
@@ -628,13 +638,18 @@ We can see that the good quality wines have low density but high acidic contents
 #### 5.3 Dispersion of Quality amongst Density and Residual Sugar
 
 ```{r echo=FALSE}
-g1 = ggplot(ds, aes(x = density, y = residual.sugar)) + 
-  geom_point(aes(color = factor(quality))) + 
-  ggtitle("Continious Score") + 
+g1 = ggplot(aes(x = density, y = residual.sugar, 
+                color = factor(quality)), data = ds) +
+      geom_point(alpha = 0.8, size = 1) +
+      geom_smooth(method = "lm", se = FALSE,size=1) + 
+  ggtitle("Original Score") + 
   labs(x="density (g/dm^3)",
-       y="residual.sugar (g/dm^3)")
-g2 = ggplot(ds, aes(x = density, y = residual.sugar)) + 
-  geom_point(alpha = 0.5, aes(color = rating)) + 
+       y="residual.sugar (g/dm^3)",
+       color = "original score")
+g2 = ggplot(aes(x = density, y = residual.sugar, 
+                color = rating), data = ds) +
+      geom_point(alpha = 0.8, size = 1) +
+      geom_smooth(method = "lm", se = FALSE,size=1) + 
   ggtitle("Rated Score") + 
   labs(x="density (g/dm^3)",
        y="residual.sugar (g/dm^3)")
@@ -646,13 +661,18 @@ Again we see that good wines or lighter blues have low density but high residual
 #### 5.4 Dispersion of Quality amongst Alcohol and Density
 
 ```{r echo=FALSE}
-g1 = ggplot(ds, aes(x = alcohol, y = density)) + 
-  geom_point(aes(color = factor(quality))) + 
-  ggtitle("Continious Score") + 
+g1 = ggplot(aes(x = alcohol, y = density, 
+                color = factor(quality)), data = ds) +
+      geom_point(alpha = 0.8, size = 1) +
+      geom_smooth(method = "lm", se = FALSE,size=1) + 
+  ggtitle("Original Score") + 
   labs(x="alcohol (% by volume)",
-       y="density (g/dm^3)")
-g2 = ggplot(ds, aes(x = alcohol, y = density)) + 
-  geom_point(alpha = 0.5, aes(color = rating)) + 
+       y="density (g/dm^3)",
+       color="original score")
+g2 = ggplot(aes(x = alcohol, y = density, 
+                color = rating), data = ds) +
+      geom_point(alpha = 0.8, size = 1) +
+      geom_smooth(method = "lm", se = FALSE,size=1) + 
   ggtitle("Rated Score") + 
   labs(x="alcohol (% by volume)",
        y="density (g/dm^3)")
@@ -680,8 +700,10 @@ No.
 
 ### 7.1 Plot One
 ```{r echo=FALSE, Plot_One}
-ggplot(ds, aes(x = alcohol, y = density)) + 
-  geom_point(alpha = 0.5, aes(color = rating)) + 
+ggplot(aes(x = alcohol, y = density, 
+                color = rating), data = ds) +
+      geom_point(alpha = 0.8, size = 1) +
+      geom_smooth(method = "lm", se = FALSE,size=1) + 
   ggtitle("Scatter plot to show distribution of quality against alcohol and density") + 
   labs(x="alcohol (% by volume)",
        y="density (g/dm^3)")
@@ -693,8 +715,10 @@ The most promising plot supporting the argument that we have started from the ve
 
 ### 7.3 Plot Two
 ```{r echo=FALSE, Plot_Two}
-ggplot(ds, aes(x = density, y = fixed.acidity)) + 
-  geom_point(aes(color = rating)) + 
+ggplot(aes(x = density, y = fixed.acidity, 
+                color = rating), data = ds) +
+      geom_point(alpha = 0.8, size = 1) +
+      geom_smooth(method = "lm", se = FALSE,size=1) + 
   ggtitle("Scatter plot to show distribution of quality against fixed acidity and density") + 
   labs(x="density (g/dm^3)",
        y="fixed.acidity (g/dm^3)")
