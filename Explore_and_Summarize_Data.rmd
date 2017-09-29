@@ -1,10 +1,13 @@
 Explore and Summarize Data
 ========================================================
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(fig.width=12, fig.height=8, fig.path='Figs/',
+                      echo=FALSE, warning=FALSE, message=FALSE)
+```
 
 ```{r echo = FALSE, message = FALSE, warning = FALSE, packages}
 # Load all of the packages that you end up using in your analysis in this code
 # chunk.
-# aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 # Notice that the parameter "echo" was set to FALSE for this code chunk. This
 # prevents the code from displaying in the knitted HTML output. You should set
@@ -17,6 +20,7 @@ Explore and Summarize Data
 
 library(ggplot2)
 library('corrplot')
+
 ```
 
 ```{r echo=FALSE, Load_the_Data}
@@ -599,7 +603,8 @@ g1 = ggplot(aes(x = citric.acid, y = fixed.acidity,
   ggtitle("Original Score") + 
   labs(x="density (g/dm^3)",
        y="fixed.acidity (g/dm^3)",
-       color = "original score")
+       color = "original score") + 
+  scale_color_brewer(type='seq')
 g2 = ggplot(aes(x = citric.acid, y = fixed.acidity, 
                 color = rating), data = ds) +
       geom_point(alpha = 0.8, size = 1) +
@@ -622,7 +627,8 @@ g1 = ggplot(aes(x = density, y = fixed.acidity,
   ggtitle("Original Score") + 
   labs(x="density (g/dm^3)",
        y="fixed.acidity (g/dm^3)",
-       color = "original score")
+       color = "original score")+ 
+  scale_color_brewer(type='seq')
 g2 = ggplot(aes(x = density, y = fixed.acidity, 
                 color = rating), data = ds) +
       geom_point(alpha = 0.8, size = 1) +
@@ -645,7 +651,8 @@ g1 = ggplot(aes(x = density, y = residual.sugar,
   ggtitle("Original Score") + 
   labs(x="density (g/dm^3)",
        y="residual.sugar (g/dm^3)",
-       color = "original score")
+       color = "original score")+ 
+  scale_color_brewer(type='seq')
 g2 = ggplot(aes(x = density, y = residual.sugar, 
                 color = rating), data = ds) +
       geom_point(alpha = 0.8, size = 1) +
@@ -668,7 +675,8 @@ g1 = ggplot(aes(x = alcohol, y = density,
   ggtitle("Original Score") + 
   labs(x="alcohol (% by volume)",
        y="density (g/dm^3)",
-       color="original score")
+       color="original score")+ 
+  scale_color_brewer(type='seq')
 g2 = ggplot(aes(x = alcohol, y = density, 
                 color = rating), data = ds) +
       geom_point(alpha = 0.8, size = 1) +
